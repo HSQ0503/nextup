@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Work_Sans } from "next/font/google";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -28,7 +30,11 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${workSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
