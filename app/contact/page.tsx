@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { Mail, MapPin, Send, Instagram, Linkedin } from "lucide-react";
+import { Mail, MapPin, Send, Share2, Globe } from "lucide-react";
 import PageHero from "@/components/page-hero";
 import { sendContactEmail, type ContactFormState } from "./action";
 
@@ -80,10 +80,10 @@ export default function ContactPage() {
           <p className="mb-3.5 font-heading text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">Follow Us</p>
           <div className="flex gap-2.5">
             <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all hover:border-gold/20 hover:bg-gold/[0.06] hover:text-gold cursor-pointer">
-              <Instagram size={18} />
+              <Share2 size={18} />
             </a>
             <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all hover:border-gold/20 hover:bg-gold/[0.06] hover:text-gold cursor-pointer">
-              <Linkedin size={18} />
+              <Globe size={18} />
             </a>
           </div>
         </div>
