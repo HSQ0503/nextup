@@ -167,7 +167,7 @@ export default function QuizEngine() {
   // ===== INTRO STATE =====
   if (state === "intro") {
     return (
-      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-40 pb-10">
         <Aurora />
         {/* Grid overlay */}
         <div
