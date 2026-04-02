@@ -20,7 +20,7 @@ export default function Navbar() {
       <Link href="/" className="flex items-center gap-2.5">
         <Image
           src="/logo/image.png"
-          alt="Career Compass logo"
+          alt="NextStep logo"
           width={120}
           height={28}
           priority

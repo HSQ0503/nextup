@@ -15,9 +15,9 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Career Compass — Find the Career That Fits You",
+  title: "NextStep — Find the Career That Fits You",
   description:
-    "Career Compass helps high school students discover career paths through a personalized quiz and actionable guidance.",
+    "NextStep helps high school students discover career paths through a personalized quiz and actionable guidance.",
 };
 
 export default function RootLayout({

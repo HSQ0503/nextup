@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="border-t border-white/[0.04] bg-navy-darker px-6 py-8 sm:px-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <span className="text-[13px] text-white/25">
-          &copy; {new Date().getFullYear()} Career Compass
+          &copy; {new Date().getFullYear()} NextStep
         </span>
         <div className="flex gap-6">
           {links.map((l) => (

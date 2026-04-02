@@ -9,7 +9,7 @@ export const team: TeamMember[] = [
   {
     name: "Gabriel Rossi Nunciaroni",
     role: "Founder",
-    bio: "High school student in Orlando, FL. Started Career Compass to help students find direction.",
+    bio: "High school student in Orlando, FL. Started NextStep to help students find direction.",
     isFounder: true,
   },
   {
