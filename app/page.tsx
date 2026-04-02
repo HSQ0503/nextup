@@ -73,11 +73,16 @@ export default function Home() {
       </section>
 
       {/* ===== MISSION ===== */}
+      <div className="h-20 bg-gradient-to-b from-navy-darker to-cream" />
       <section
         id="mission"
-        className="-mt-10 bg-cream px-6 py-32 text-navy-darker"
-        style={{ clipPath: "polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%)" }}
+        className="relative bg-cream px-6 py-32 text-navy-darker"
       >
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-40"
+          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 0%, rgba(201,168,76,0.06), transparent)" }}
+          aria-hidden="true"
+        />
         <div className="mx-auto max-w-[720px] text-center">
           <SectionLabel>Our Mission</SectionLabel>
           <h2 className="font-heading text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-snug tracking-tight mb-6 text-navy-darker">
@@ -86,7 +91,7 @@ export default function Home() {
             A plan to achieve them.
           </h2>
           <p className="text-lg leading-[1.85] text-[#506070]">
-            Career Compass provides high school students with personalized career
+            NextStep provides high school students with personalized career
             guidance and actionable pathways to make informed decisions about their
             future. We don&apos;t just help you figure out what you want to do — we
             help you get there.
@@ -94,9 +99,10 @@ export default function Home() {
           <div className="mx-auto mt-9 h-[3px] w-12 rounded-full bg-gradient-to-r from-gold to-transparent" />
         </div>
       </section>
+      <div className="h-20 bg-gradient-to-b from-cream to-navy" />
 
       {/* ===== HOW IT WORKS ===== */}
-      <section className="-mt-10 bg-navy px-6 py-28">
+      <section className="bg-navy px-6 py-28">
         <div className="mx-auto max-w-[1100px]">
           <div className="mb-20 text-center">
             <SectionLabel>How It Works</SectionLabel>
@@ -112,13 +118,13 @@ export default function Home() {
             ].map((step) => (
               <div
                 key={step.num}
-                className="group relative overflow-hidden rounded-[20px] border border-gold/[0.08] bg-white/[0.03] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-gold/20 hover:bg-gold/[0.04] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] cursor-pointer"
+                className="group relative overflow-hidden rounded-[20px] border border-gold/[0.08] bg-white/[0.03] p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-gold/20 hover:bg-gold/[0.04] hover:shadow-[0_24px_48px_rgba(0,0,0,0.25),0_0_16px_rgba(201,168,76,0.06)] cursor-pointer"
               >
                 <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="absolute right-8 top-8 flex h-10 w-10 items-center justify-center rounded-[10px] bg-gold/[0.08]">
                   {step.icon}
                 </div>
-                <div className="mb-5 bg-gradient-to-b from-gold/15 to-transparent bg-clip-text font-heading text-[64px] font-black leading-none text-transparent">
+                <div className="mb-5 bg-gradient-to-b from-gold/15 to-transparent bg-clip-text font-heading text-[64px] font-black leading-none text-transparent transition-all duration-300 group-hover:from-gold/30">
                   {step.num}
                 </div>
                 <h3 className="mb-3 font-heading text-lg font-bold tracking-tight">
@@ -134,6 +140,7 @@ export default function Home() {
       </section>
 
       {/* ===== FOUNDER ===== */}
+      <div className="h-16 bg-gradient-to-b from-navy to-navy-darker" />
       <section className="relative overflow-hidden bg-navy-darker px-6 py-28">
         <div
           className="absolute -top-24 -right-24 h-[500px] w-[500px] rounded-full"
@@ -156,9 +163,9 @@ export default function Home() {
               Gabriel Rossi Nunciaroni
             </h3>
             <p className="mb-5 text-[1.05rem] font-light leading-[1.8] text-white/55">
-              A high school student in Orlando, Florida, Gabriel started Career
-              Compass with one goal: help students who feel lost about their
-              future find direction — and a real plan to get there.
+              A high school student in Orlando, Florida, Gabriel started NextStep
+              with one goal: help students who feel lost about their future find
+              direction — and a real plan to get there.
             </p>
             <div className="flex gap-3">
               <svg viewBox="0 0 24 24" fill="currentColor" className="mt-0.5 h-5 w-5 min-w-5 text-gold">
