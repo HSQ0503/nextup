@@ -52,6 +52,7 @@ const CONFETTI_PIECES = Array.from({ length: 20 }, (_, i) => {
     size: 3 + Math.random() * 4,
     delay: Math.random() * 0.3,
     round: Math.random() > 0.5,
+    opacity: 0.6 + Math.random() * 0.4,
   };
 });
 
@@ -66,7 +67,7 @@ function Confetti() {
             width: p.size,
             height: p.size,
             borderRadius: p.round ? "50%" : "1px",
-            background: `rgba(201,168,76,${0.6 + Math.random() * 0.4})`,
+            background: `rgba(201,168,76,${p.opacity})`,
             "--confetti-x": `${p.x}px`,
             "--confetti-y": `${p.y}px`,
             "--confetti-r": `${p.r}deg`,
