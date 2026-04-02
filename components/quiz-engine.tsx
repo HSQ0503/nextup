@@ -13,7 +13,9 @@ import {
   Download,
   RotateCcw,
   Compass,
+  Sparkles,
 } from "lucide-react";
+import Aurora from "@/components/aurora";
 import ThreadsBg from "@/components/threads-bg";
 
 type QuizState = "intro" | "active" | "results";
@@ -165,36 +167,89 @@ export default function QuizEngine() {
   // ===== INTRO STATE =====
   if (state === "intro") {
     return (
-      <div className="mx-auto max-w-lg px-6 pt-32 pb-20 text-center">
-        <div className="mx-auto mb-6 flex h-[72px] w-[72px] items-center justify-center rounded-[20px] border border-gold/15 bg-gold/[0.08]" style={{ animation: "compass-pulse 2.5s ease-in-out infinite" }}>
-          <Compass size={32} className="text-gold" />
-        </div>
-        <h1 className="mb-3 font-heading text-3xl font-bold tracking-tight">
-          Career Quiz
-        </h1>
-        <p className="mb-7 text-[0.95rem] font-light leading-relaxed text-white/55">
-          Answer 15 quick questions about your interests, strengths, and
-          preferences. We&apos;ll match you with career paths that fit.
-        </p>
-        <div className="mb-8 flex justify-center gap-6">
-          {[
-            { icon: <Clock size={14} />, text: "~5 minutes" },
-            { icon: <CheckSquare size={14} />, text: "15 questions" },
-            { icon: <FileText size={14} />, text: "PDF results" },
-          ].map((m) => (
-            <div key={m.text} className="flex items-center gap-1.5 text-xs text-white/55">
-              <span className="text-gold">{m.icon}</span>
-              {m.text}
+      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+        <Aurora />
+        {/* Grid overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[1]"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+            maskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%)",
+          }}
+        />
+
+        <div className="relative z-[2] mx-auto max-w-2xl text-center">
+          {/* Icon */}
+          <div
+            className="mx-auto mb-7 flex h-20 w-20 items-center justify-center rounded-[22px] border border-gold/15 bg-gold/[0.08]"
+            style={{ animation: "compass-pulse 2.5s ease-in-out infinite" }}
+          >
+            <Compass size={36} className="text-gold" />
+          </div>
+
+          {/* Heading */}
+          <h1 className="mb-4 font-heading text-[clamp(2.25rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.03em]">
+            Discover Your
+            <br />
+            <span className="bg-gradient-to-br from-gold to-gold-light bg-clip-text text-transparent">
+              Career Path
+            </span>
+          </h1>
+
+          {/* Description */}
+          <p className="mx-auto mb-8 max-w-md text-[1.05rem] font-light leading-relaxed text-white/55">
+            15 quick questions about your interests, strengths, and
+            preferences — matched to real career paths that fit who you are.
+          </p>
+
+          {/* Meta pills */}
+          <div className="mb-9 flex justify-center gap-4">
+            {[
+              { icon: <Clock size={14} />, text: "~5 minutes" },
+              { icon: <CheckSquare size={14} />, text: "15 questions" },
+              { icon: <FileText size={14} />, text: "PDF results" },
+            ].map((m) => (
+              <div
+                key={m.text}
+                className="flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-3.5 py-2 text-xs text-white/55"
+              >
+                <span className="text-gold">{m.icon}</span>
+                {m.text}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => setState("active")}
+            className="group inline-flex items-center gap-2.5 rounded-xl bg-gold px-8 py-4 font-heading text-[15px] font-bold text-navy-deep transition-all hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.25)] cursor-pointer"
+          >
+            Start Quiz
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+          </button>
+
+          {/* Category preview */}
+          <div className="mt-14">
+            <div className="mb-4 flex items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.1em] text-white/30">
+              <Sparkles size={12} className="text-gold/40" />
+              Explore 8 career fields
             </div>
-          ))}
+            <div className="flex flex-wrap justify-center gap-2">
+              {categories.map((cat) => (
+                <span
+                  key={cat.id}
+                  className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3.5 py-1.5 text-[12px] text-white/40 transition-colors hover:border-gold/15 hover:text-white/60"
+                >
+                  {cat.name}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-        <button
-          onClick={() => setState("active")}
-          className="inline-flex items-center gap-2.5 rounded-xl bg-gold px-7 py-4 font-heading text-[15px] font-bold text-navy-deep transition-all hover:bg-gold-light hover:-translate-y-0.5 cursor-pointer"
-        >
-          Start Quiz
-          <ArrowRight size={16} />
-        </button>
       </div>
     );
   }

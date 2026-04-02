@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Edit3, BarChart3, CheckCircle2, User } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import Aurora from "@/components/aurora";
 import Compass from "@/components/compass";
 import SectionLabel from "@/components/section-label";
+import StepCards from "@/components/step-cards";
+import TextType from "@/components/text-type";
 
 export default function Home() {
   return (
@@ -33,9 +35,18 @@ export default function Home() {
               Find the career
               <br />
               that{" "}
-              <span className="bg-gradient-to-br from-gold to-gold-light bg-clip-text text-transparent">
-                fits you
-              </span>
+              <TextType
+                text={["fits you", "inspires you", "drives you", "defines you"]}
+                as="span"
+                className="bg-gradient-to-br from-gold to-gold-light bg-clip-text text-transparent"
+                typingSpeed={80}
+                deletingSpeed={50}
+                pauseDuration={2500}
+                initialDelay={500}
+                showCursor
+                cursorCharacter="|"
+                cursorClassName="bg-gradient-to-br from-gold to-gold-light bg-clip-text text-transparent"
+              />
             </h1>
             <p className="mb-9 max-w-[440px] text-lg font-light leading-relaxed text-white/55">
               Take a short quiz, discover career paths matched to your strengths,
@@ -73,7 +84,11 @@ export default function Home() {
       </section>
 
       {/* ===== MISSION ===== */}
-      <div className="h-20 bg-gradient-to-b from-navy-darker to-cream" />
+      <div className="relative -mb-px bg-navy-darker">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="block w-full h-[80px] sm:h-[120px]" aria-hidden="true">
+          <path d="M0,0 C360,120 1080,120 1440,0 L1440,120 L0,120 Z" fill="#FBF6EC" />
+        </svg>
+      </div>
       <section
         id="mission"
         className="relative bg-cream px-6 py-32 text-navy-darker"
@@ -99,7 +114,11 @@ export default function Home() {
           <div className="mx-auto mt-9 h-[3px] w-12 rounded-full bg-gradient-to-r from-gold to-transparent" />
         </div>
       </section>
-      <div className="h-20 bg-gradient-to-b from-cream to-navy" />
+      <div className="relative -mt-px bg-navy">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="block w-full h-[80px] sm:h-[120px]" aria-hidden="true">
+          <path d="M0,120 C360,0 1080,0 1440,120 L1440,0 L0,0 Z" fill="#FBF6EC" />
+        </svg>
+      </div>
 
       {/* ===== HOW IT WORKS ===== */}
       <section className="bg-navy px-6 py-28">
@@ -110,32 +129,7 @@ export default function Home() {
               Three steps to clarity
             </h2>
           </div>
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { num: "01", title: "Take the Quiz", desc: "Answer questions about your interests, strengths, and what kind of work environment excites you.", icon: <Edit3 size={20} className="text-gold" /> },
-              { num: "02", title: "Get Your Results", desc: "See your top 2–3 career paths with detailed descriptions. Download them as a PDF to keep.", icon: <BarChart3 size={20} className="text-gold" /> },
-              { num: "03", title: "Take Action", desc: "Join a chapter, attend events, connect with mentors, and start building toward your future.", icon: <CheckCircle2 size={20} className="text-gold" /> },
-            ].map((step) => (
-              <div
-                key={step.num}
-                className="group relative overflow-hidden rounded-[20px] border border-gold/[0.08] bg-white/[0.03] p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-gold/20 hover:bg-gold/[0.04] hover:shadow-[0_24px_48px_rgba(0,0,0,0.25),0_0_16px_rgba(201,168,76,0.06)] cursor-pointer"
-              >
-                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="absolute right-8 top-8 flex h-10 w-10 items-center justify-center rounded-[10px] bg-gold/[0.08]">
-                  {step.icon}
-                </div>
-                <div className="mb-5 bg-gradient-to-b from-gold/15 to-transparent bg-clip-text font-heading text-[64px] font-black leading-none text-transparent transition-all duration-300 group-hover:from-gold/30">
-                  {step.num}
-                </div>
-                <h3 className="mb-3 font-heading text-lg font-bold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-[0.95rem] font-light leading-relaxed text-white/55">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <StepCards />
         </div>
       </section>
 
