@@ -34,20 +34,20 @@ export default function ContactPage() {
           <div className="mb-4 grid gap-3.5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="mb-1.5 block text-xs font-medium text-white/55 font-heading tracking-wide">Name</label>
-              <input id="name" name="name" type="text" required placeholder="Your name" className="w-full rounded-[10px] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40" />
+              <input id="name" name="name" type="text" required placeholder="Your name" className="w-full rounded-[10px] border border-white/[0.12] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-gold/20" />
             </div>
             <div>
               <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-white/55 font-heading tracking-wide">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@email.com" className="w-full rounded-[10px] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40" />
+              <input id="email" name="email" type="email" required placeholder="you@email.com" className="w-full rounded-[10px] border border-white/[0.12] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-gold/20" />
             </div>
           </div>
           <div className="mb-4">
             <label htmlFor="subject" className="mb-1.5 block text-xs font-medium text-white/55 font-heading tracking-wide">Subject</label>
-            <input id="subject" name="subject" type="text" required placeholder="What's this about?" className="w-full rounded-[10px] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40" />
+            <input id="subject" name="subject" type="text" required placeholder="What's this about?" className="w-full rounded-[10px] border border-white/[0.12] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-gold/20" />
           </div>
           <div className="mb-5">
             <label htmlFor="message" className="mb-1.5 block text-xs font-medium text-white/55 font-heading tracking-wide">Message</label>
-            <textarea id="message" name="message" required rows={5} placeholder="Write your message here..." className="w-full resize-y rounded-[10px] border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40" />
+            <textarea id="message" name="message" required rows={5} placeholder="Write your message here..." className="w-full resize-y rounded-[10px] border border-white/[0.12] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-gold/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-gold/20" />
           </div>
           <button type="submit" disabled={pending} className="flex w-full items-center justify-center gap-2 rounded-[10px] bg-gold px-5 py-3.5 font-heading text-[15px] font-bold text-navy-deep transition-all hover:bg-gold-light disabled:opacity-60 cursor-pointer disabled:cursor-default">
             <Send size={16} />
@@ -58,16 +58,16 @@ export default function ContactPage() {
           <h2 className="mb-2 font-heading text-xl font-bold tracking-tight sm:text-2xl">Other Ways to Reach Us</h2>
           <p className="mb-8 text-[0.95rem] font-light leading-relaxed text-white/55">Whether you want to partner, volunteer, or just say hello — we&apos;re here.</p>
           <div className="mb-9 flex flex-col gap-4">
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center gap-3.5 rounded-xl p-2 -m-2 transition-all duration-300 hover:bg-white/[0.03]">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/10 bg-gold/[0.08]">
                 <Mail size={18} className="text-gold" />
               </div>
               <div>
                 <span className="block text-[11px] uppercase tracking-[0.06em] text-white/55 font-medium">Email</span>
-                <p className="text-[0.9rem]">contact@careercompass.org</p>
+                <p className="text-[0.9rem]">contact@nextstep.org</p>
               </div>
             </div>
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center gap-3.5 rounded-xl p-2 -m-2 transition-all duration-300 hover:bg-white/[0.03]">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/10 bg-gold/[0.08]">
                 <MapPin size={18} className="text-gold" />
               </div>
@@ -79,10 +79,10 @@ export default function ContactPage() {
           </div>
           <p className="mb-3.5 font-heading text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">Follow Us</p>
           <div className="flex gap-2.5">
-            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all hover:border-gold/20 hover:bg-gold/[0.06] hover:text-gold cursor-pointer">
+            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all duration-300 hover:border-gold/20 hover:bg-gold/[0.12] hover:text-gold cursor-pointer">
               <Share2 size={18} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all hover:border-gold/20 hover:bg-gold/[0.06] hover:text-gold cursor-pointer">
+            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/[0.06] bg-white/[0.04] text-white/55 transition-all duration-300 hover:border-gold/20 hover:bg-gold/[0.12] hover:text-gold cursor-pointer">
               <Globe size={18} />
             </a>
           </div>
